@@ -53,6 +53,7 @@ const defaultRancherVersion = '2.7.0';
 const defaultTiltVersion = '0.31.2';
 const defaultSkaffoldVersion = '2.1.0';
 const defaultKubeScoreVersion = '1.16.1';
+const defaultTanzuCliVersion = '1.2.0';
 const Tools = [
     {
         name: 'kubectl',
