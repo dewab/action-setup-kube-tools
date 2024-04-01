@@ -1,4 +1,4 @@
-name: 'Setup Kubernetes Tools'
+name: 'Setup Kubernetes Tools inc. Tanzu-CLI'
 description: 'Setup Kubernetes tools: kubectl, kustomize, helm, kubeconform, conftest, yq, rancher, tilt, skaffold, kube-score, tanzu'
 author: 'Yoichi Kawasaki @yokawasa'
 inputs:
