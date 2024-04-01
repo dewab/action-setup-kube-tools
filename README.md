@@ -1,4 +1,4 @@
-[![action-setup-kube-tools Test](https://github.com/yokawasa/action-setup-kube-tools/actions/workflows/test.yml/badge.svg)](https://github.com/yokawasa/action-setup-kube-tools/actions/workflows/test.yml)
+[![action-setup-kube-tools Test](https://github.com/dewab/action-setup-kube-tools/actions/workflows/test.yml/badge.svg)](https://github.com/dewab/action-setup-kube-tools/actions/workflows/test.yml)
 
 # action-setup-kube-tools
 A GitHub Action that setup Kubernetes tools (kubectl, kustomize, helm, kubeconform, conftest, yq, rancher, tilt, skaffold, kube-score) and cache them on the runner. It is like a typescript version of [stefanprodan/kube-tools](https://github.com/stefanprodan/kube-tools) with no command input param, but as compared with [it](https://github.com/stefanprodan/kube-tools), it's **very fast** as it installs the tools asynchronously.
@@ -23,6 +23,7 @@ A GitHub Action that setup Kubernetes tools (kubectl, kustomize, helm, kubeconfo
 |`tilt`|`false`|`0.31.2`| Tilt version. Tilt vesion can be found [here](https://github.com/tilt-dev/tilt/releases)|
 |`skaffold`|`false`|`2.1.0`| Skaffold version. Skaffold vesion can be found [here](https://github.com/GoogleContainerTools/skaffold/releases)|
 |`kube-score`|`false`|`1.16.1`| kube-score version. kube-score vesion can be found [here](https://github.com/zegl/kube-score/releases)|
+|`tanzu`|`false`|`1.2.0`| tanzu-cli version. tanzu-cli vesion can be found [here](https://github.com/vmware-tanzu/tanzu-cli/releases)|
 
 > - Supported Environments: Linux
 > - From v0.7.0, the action supports tool version 'v' prefix. Prior to v0.7.0, the action only accept the tool version without 'v' prefix but from v0.7.0 the action automatically add/remove the prefix as necessary
@@ -41,6 +42,7 @@ A GitHub Action that setup Kubernetes tools (kubectl, kustomize, helm, kubeconfo
 |`tilt-path`| rancher command path if the action setup the tool, otherwise empty string |
 |`skaffold-path`| rancher command path if the action setup the tool, otherwise empty string |
 |`kube-score-path:`| rancher command path if the action setup the tool, otherwise empty string |
+|`tanzu-path`| tanzu command path if the action setup the tool, otherwise empty string |
 
 ### Sample Workflow
 
@@ -62,6 +64,7 @@ Specific versions for the commands can be setup by adding inputs parameters like
         tilt: '0.31.2'
         skaffold: '2.1.0'
         kube-score: '1.16.1'
+        tanzu: '1.2.0'
     - run: |
         kubectl version --client
         kustomize version
@@ -73,6 +76,7 @@ Specific versions for the commands can be setup by adding inputs parameters like
         tilt version
         skaffold version
         kube-score version
+        tanzu version
 ```
 
 Default versions for the commands will be setup if you don't give any inputs like this:
@@ -94,6 +98,7 @@ Default versions for the commands will be setup if you don't give any inputs lik
         tilt version
         skaffold version
         kube-score version
+        tanzu version
 ```
 
 By specifying setup-tools you can choose which tools the action setup. Supported separator is return in multi-line string like this
@@ -179,6 +184,7 @@ git push origin releases/v0.10.0
 - https://github.com/tilt-dev/tilt/releases
 - https://github.com/GoogleContainerTools/skaffold/releases
 - https://github.com/zegl/kube-score/releases
+- https://github.com/vmware-tanzu/tanzu-cli/releases
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/yokawasa/action-setup-kube-tools

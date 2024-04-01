@@ -135,7 +135,7 @@ const Tools = [
         name: 'tanzu',
         defaultVersion: defaultTanzuCliVersion,
         isArchived: false,
-        supportArm: true,
+        supportArm: false,
         commandPathInPackage: 'tanzu-cli-linux_{arch}'
     }
 ];

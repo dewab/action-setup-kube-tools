@@ -36,6 +36,7 @@ jobs:
         tilt version
         skaffold version
         kube-score version
+        tanzu version
     - run: |
         kubectl=${{steps.setup.outputs.kubectl-path}}
         kustomize=${{steps.setup.outputs.kustomize-path}}
@@ -48,6 +49,7 @@ jobs:
         tilt=${{steps.setup.outputs.tilt-path}}
         skaffold=${{steps.setup.outputs.skaffold-path}}
         kubescore=${{steps.setup.outputs.kube-score-path}}
+        tanzu=${{steps.setup.outputs.tanzu-path}}
 
         ${kubectl} version --client
         ${kustomize} version
@@ -60,6 +62,7 @@ jobs:
         ${tilt} version
         ${skaffold} version
         ${kubescore} version
+        ${tanzu} version
 
   test2:
     runs-on: ubuntu-latest
@@ -78,6 +81,7 @@ jobs:
         tilt: '0.18.11'
         skaffold: '1.20.0'
         kube-score: '1.10.1'
+        tanzu: '1.2.0'
       id: setup
     - run: |
         kubectl version --client
@@ -91,6 +95,7 @@ jobs:
         tilt version
         skaffold version
         kube-score version
+        tanzu version
     - run: |
         kubectl=${{steps.setup.outputs.kubectl-path}}
         kustomize=${{steps.setup.outputs.kustomize-path}}
@@ -103,6 +108,7 @@ jobs:
         tilt=${{steps.setup.outputs.tilt-path}}
         skaffold=${{steps.setup.outputs.skaffold-path}}
         kubescore=${{steps.setup.outputs.kube-score-path}}
+        tanzu=${{steps.setup.outputs.tanzu-path}}
 
         ${kubectl} version --client
         ${kustomize} version
@@ -115,6 +121,7 @@ jobs:
         ${tilt} version
         ${skaffold} version
         ${kubescore} version
+        ${tanzu} version
 
   test3:
     runs-on: ubuntu-latest
@@ -150,6 +157,7 @@ jobs:
         tilt=${{steps.setup.outputs.tilt-path}}
         skaffold=${{steps.setup.outputs.skaffold-path}}
         kubescore=${{steps.setup.outputs.kube-score-path}}
+        tanzi=${{steps.setup.outputs.tanzu-path}}
 
         if [ ! -z ${kubectl} ]; then
           ${kubectl} version --client
@@ -183,6 +191,9 @@ jobs:
         fi
         if [ ! -z ${kubescore} ]; then
           ${kubescore} version
+        fi
+        if [ ! -z ${tanzu} ]; then
+          ${tanzu} version
         fi
 
   # ARM test

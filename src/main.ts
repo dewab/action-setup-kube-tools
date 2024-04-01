@@ -111,8 +111,8 @@ const Tools: Tool[] = [
     name: 'tanzu',
     defaultVersion: defaultTanzuCliVersion,
     isArchived: false,
-    supportArm: true,
-    commandPathInPackage: 'tanzu-cli-linux_{arch}'
+    supportArm: false,
+    commandPathInPackage: 'v{ver}/tanzu-cli-linux_{arch}'
   }
 ]
 
