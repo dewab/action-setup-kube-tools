@@ -1,5 +1,5 @@
 name: 'Setup Kubernetes Tools'
-description: 'Setup Kubernetes tools: kubectl, kustomize, helm, kubeconform, conftest, yq, rancher, tilt, skaffold, kube-score'
+description: 'Setup Kubernetes tools: kubectl, kustomize, helm, kubeconform, conftest, yq, rancher, tilt, skaffold, kube-score, tanzu'
 author: 'Yoichi Kawasaki @yokawasa'
 inputs:
   fail-fast:
@@ -58,6 +58,10 @@ inputs:
     required: false
     default: '1.16.1'
     description: 'kube-score version'
+  tanzu:
+    required: false
+    default: '1.2.0'
+    description: 'tanzu version'
 outputs:
   kubectl-path:
     description: 'kubectl command path if the action setup the tool, otherwise empty string'
@@ -79,6 +83,8 @@ outputs:
     description: 'skaffold command path if the action setup the tool, otherwise empty string'
   kube-score-path:
     description: 'kube-score command path if the action setup the tool, otherwise empty string'
+  tanzu-path:
+    description: 'tanzu command path if the action setup the tool, otherwise empty string'
 branding:
   icon: 'terminal'
   color: 'blue'

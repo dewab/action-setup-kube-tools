@@ -31,7 +31,8 @@
     "rancher",
     "tilt",
     "skaffold",
-    "kube-score"
+    "kube-score",
+    "tanzu"
   ],
   "author": "Yoichi Kawasaki",
   "license": "MIT",
