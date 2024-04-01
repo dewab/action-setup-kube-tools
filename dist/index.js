@@ -199,6 +199,7 @@ function getDownloadURL(commandName, version, archType) {
         case 'tanzu-cli':
             urlFormat =
                 'https://github.com/vmware-tanzu/tanzu-cli/releases/download/v{ver}/tanzu-cli-linux-{arch}.tar.gz';
+            break;
         default:
             return '';
     }
