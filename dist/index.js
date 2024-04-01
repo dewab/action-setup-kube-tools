@@ -137,7 +137,7 @@ const Tools = [
         defaultVersion: defaultTanzuCliVersion,
         isArchived: true,
         supportArm: false,
-        commandPathInPackage: 'tanzu-cli-linux_{arch}'
+        commandPathInPackage: 'v{ver}/tanzu-cli-linux_{arch}'
     }
 ];
 // Replace all {ver} and {arch} placeholders in the source format string with the actual values
