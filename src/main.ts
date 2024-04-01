@@ -19,6 +19,7 @@ const defaultRancherVersion = '2.7.0'
 const defaultTiltVersion = '0.31.2'
 const defaultSkaffoldVersion = '2.1.0'
 const defaultKubeScoreVersion = '1.16.1'
+const defaultTanzuCliVersion = '1.2.0'
 
 interface Tool {
   name: string
@@ -105,6 +106,13 @@ const Tools: Tool[] = [
     isArchived: false,
     supportArm: true,
     commandPathInPackage: 'kube-score'
+  },
+  {
+    name: 'tanzu',
+    defaultVersion: defaultTanzuCliVersion,
+    isArchived: false,
+    supportArm: true,
+    commandPathInPackage: 'tanzu-cli-linux_{arch}'
   }
 ]
 
@@ -174,6 +182,9 @@ function getDownloadURL(
       urlFormat =
         'https://github.com/zegl/kube-score/releases/download/v{ver}/kube-score_{ver}_linux_{arch}'
       break
+    case 'tanzu':
+      urlFormat =
+        'https://github.com/vmware-tanzu/tanzu-cli/releases/download/v{ver}/tanzu-cli-linux-{arch}.tar.gz'
     default:
       return ''
   }

@@ -130,6 +130,13 @@ const Tools = [
         isArchived: false,
         supportArm: true,
         commandPathInPackage: 'kube-score'
+    },
+    {
+        name: 'tanzu',
+        defaultVersion: defaultTanzuCliVersion,
+        isArchived: false,
+        supportArm: true,
+        commandPathInPackage: 'tanzu-cli-linux_{arch}'
     }
 ];
 // Replace all {ver} and {arch} placeholders in the source format string with the actual values
@@ -189,6 +196,9 @@ function getDownloadURL(commandName, version, archType) {
             urlFormat =
                 'https://github.com/zegl/kube-score/releases/download/v{ver}/kube-score_{ver}_linux_{arch}';
             break;
+        case 'tanzu-cli':
+            urlFormat =
+                'https://github.com/vmware-tanzu/tanzu-cli/releases/download/v{ver}/tanzu-cli-linux-{arch}.tar.gz';
         default:
             return '';
     }
